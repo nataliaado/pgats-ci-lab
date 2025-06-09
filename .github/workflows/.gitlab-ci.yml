@@ -1,0 +1,12 @@
+stages:
+  - test
+
+e2e_tests:
+  stage: test
+  image: node:22
+  before_script:
+    - npm install -g yarn
+    - yarn
+    - yarn playwright install
+  script:
+    - yarn run e2e
