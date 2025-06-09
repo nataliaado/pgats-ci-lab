@@ -1,12 +1,15 @@
 stages:
-  - test
+  - e2e
 
-e2e_tests:
-  stage: test
-  image: node:22
-  before_script:
+e2e-tests:
+  stage: e2e
+  image: node:22 # Imagem oficial do Node.js
+  tags: []       # Adicione tags se estiver usando runners específicos
+  script:
+    - apt-get update && apt-get install -y curl
     - npm install -g yarn
     - yarn
     - yarn playwright install
-  script:
     - yarn run e2e
+  when: manual         # Para execução manual via botão
+  allow_failure: false # Se quiser que falhas parem a pipeline
