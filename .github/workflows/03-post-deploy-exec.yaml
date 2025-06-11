@@ -18,9 +18,9 @@ jobs:
     # maquina que o job vai executar
     runs-on: ubuntu-latest
 
-  # condicional - if
-  # '${ expressão }'
-  # == comparação
+    # condicional - if
+    # '${ expressão }'
+    # == comparação
 
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
 
