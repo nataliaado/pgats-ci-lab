@@ -1,0 +1,12 @@
+trigger: none  # Não dispara automaticamente
+
+pr: none  # Não dispara em pull requests
+
+jobs:
+- job: Hello
+  displayName: 'Olá Mundo'
+  pool:
+    vmImage: 'ubuntu-latest'
+  steps:
+  - script: echo "Funcionando!"
+    displayName: 'Executando script Olá Mundo'
